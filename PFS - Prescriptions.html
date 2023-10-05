@@ -1,0 +1,2610 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:x="urn:schemas-microsoft-com:office:excel"
+      xmlns="http://www.w3.org/TR/REC-html40">
+    <head>
+        <title>CDT JIRA</title>
+        <style type="text/css">
+         table {
+             mso-displayed-decimal-separator:"\.";
+             mso-displayed-thousand-separator:"\,";
+         }
+         body
+         {
+             margin: 0px;
+             font-size: 12px;
+             font-family: Arial, sans-serif;
+             color:black;
+         }
+
+        </style>
+        <META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+        <!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+        <!--
+             Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+             since Excel does not use or save the css files it is hardcoded here.
+           -->
+        <style>
+         @page
+         {
+             mso-page-orientation:landscape;
+             margin:.25in .25in .5in .25in;
+             mso-header-margin:.5in;
+             mso-footer-margin:.25in;
+             mso-footer-data:"&R&P of &N";
+             mso-horizontal-page-align:center;
+             mso-vertical-page-align:center;
+         }
+
+         td.issuekey,
+         td.issuetype,
+         td.status {
+             mso-style-parent: "";
+             mso-number-format: \@;
+             text-align: left;
+         }
+         br
+         {
+             mso-data-placement:same-cell;
+         }
+
+         td
+         {
+             vertical-align: top;
+         }
+        </style>
+
+        <!--[if gte mso 9]><xml>
+            <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+            <x:ExcelWorksheet>
+            <x:Name>general_report</x:Name>
+            <x:WorksheetOptions>
+            <x:Print>
+            <x:ValidPrinterInfo/>
+            </x:Print>
+            </x:WorksheetOptions>
+            </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+            </x:ExcelWorkbook>
+            </xml><![endif]-->
+    </head>
+    <body>
+
+        <table border="1">
+            <tr bgcolor="#0747a6" height="30">
+                <td colspan="4">
+                    <img src="https://nhsd-jira.digital.nhs.uk/images/jira-software.png" width="57" height="30" border="0" alt="CDT JIRA">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <a href="https://nhsd-jira.digital.nhs.uk/issues/?jql=project+%3D+DCA+AND+issuetype+%3D+Test+AND+labels+in+%28Getprescriptionissuedetails%2C+Getrequestedprescriptionreorders%2C+Getmedicationsrelatingtoapatient%2C+Getaspecificplannedmedicationrequest%29+ORDER+BY+priority+DESC%2C+updated+DESC" data-testid="filterNameHref">CDT JIRA</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Displaying <strong>30</strong> issues at <strong>04/Oct/23 3:41 PM</strong>.
+                </td>
+            </tr>
+        </table>
+
+        
+
+
+                            <issuetable-web-component data-content="issues">
+                <table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                            Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                            Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10919" data-id="customfield_10919">
+                            Zephyr Teststep
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                            Description
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow1123275" rel="1123275" data-issuekey="DCA-39" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-39" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-39">DCA-39</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - check to confirm groupIdentifier is only populated for medications issued via EPS
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested with NHS number only<br/>
+And there is an repeat medication that has been issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>An acute medication that has been issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the returned Medication Request intent of Order does contain a Group identifier<br/>
+And that the system element equals <a href="https://fhir.nhs.uk/Id/prescription-order-number" class="external-link" target="_blank" rel="nofollow noopener">https://fhir.nhs.uk/Id/prescription-order-number</a></p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to check that that the groupIdentifier is returned for medications issued via EPS only and that the system element equals &#39;https://fhir.nhs.uk/Id/prescription-order-number&#39;<br/>
+<br/>
+*Test Data*<br/>
+ * An acute medication that has been issued via EPS
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1126905" rel="1126905" data-issuekey="DCA-63" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-63" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-63">DCA-63</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - optional search status - active
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of active</p></td>
+                        <td style="max-height: 25px;"><p>An acute medication that has been authorised but not issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned for the authorised but not issued acute medication<br/>
+And confirm that the status element equals active</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of active</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication that has been authorised for 4 issues but has only been issued 2 times</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned for the authorised repeat medication<br/>
+And verify that the Medication Request intent of order for the two authorised issued are not returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that the correct Medication Requests are returned when the user searches using an optional status of active. Only the Medication Request intent of plan wil be returned using this search<br/>
+<br/>
+*Test Data*<br/>
+ * An acute medication that has been authorised but not issued<br/>
+ * A repeat medication that has been authorised for 4 issues but has only been issued 2 times
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1123869" rel="1123869" data-issuekey="DCA-47" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-47" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-47">DCA-47</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - Medication Request note element
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested with NHS number only<br/>
+And there is an acute medication that has been issued containing text information entered by the prescriber</p></td>
+                        <td style="max-height: 25px;"><p>An acute medication that has been issued that contains notes that have been added by the prescriber</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Request note element is populated as expected</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Tests around the population of the note element.<br/>
+<br/>
+If supported then the Note element in the Medication Request resource should be populated with any textual information the prescribes feel is relevant to the dispenser<br/>
+<br/>
+*Test Data*<br/>
+ * An acute medication that has been issued that contains notes that have been added by the prescriber<br/>
+<br/>
+ <br/>
+<br/>
+**outstanding query - should the note element be populated with the prescriber notes for Med Request intent of order and plan or just either order or plan?
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1133746" rel="1133746" data-issuekey="DCA-98" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-98" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-98">DCA-98</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders - multiple parameter testing
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of requested <br/>
+And enters le and ge authoredOn dates that encompass the date the reorder was requested</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned for for the  repeat prescription request</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of requested <br/>
+And enters eq date that the reorder was requested<br/>
+And the include Task:focus:MedicationRequest is selected</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned for for the  repeat prescription request<br/>
+And confirm that the Medication Request resource is returned<br/>
+And that the intent equals Plan</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of requested <br/>
+And enters eq date of a day after the reorder was requested</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is not returned for the repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of requested <br/>
+And enters ge date of a day before the reorder was requested<br/>
+And the Task Id of the prescription is included</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned for for the  repeat prescription </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of requested <br/>
+And enters le date of a day after the reorder was requested<br/>
+And the Task Id of the prescription is included<br/>
+And a status of accepted is selected</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is not returned for the repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Tests to ensure the correct prescriptions requests are returned when multiple parameters are entered as part of the Get requested prescription reorder API <br/>
+<br/>
+*Test Data*<br/>
+ * Current repeat prescription request with a status of &#39;requested&#39;
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1132007" rel="1132007" data-issuekey="DCA-91" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-91" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-91">DCA-91</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders - authoredOn date parameter
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a authoredOn date of eq yyyy-mm-dd (Scenario 1) together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Scenario 1 - a repeat prescription request with an authoredOn date of yyyy-mm-dd</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned <br/>
+And that only the repeat prescription request in Scenario 1 is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a authoredOn date of ge yyyy-mm-dd (Scenario 3) together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Scenario 3 - a repeat prescription request with an authoredOn of the date Scenario of -1 day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned <br/>
+for all the three prescription requests created</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a authoredOn date of yyyy-mm-dd le (Scenario 3) together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Scenario 3 - a repeat prescription request with an authoredOn of the date Scenario of -1 day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned <br/>
+for all the three prescription requests created</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a authoredOn date of yyyy-mm-dd ge (Scenario 1) And a le authoredOn date of yyyy-mm-dd (Scenario 2) together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Scenario 1 - a repeat prescription request with an authoredOn date of yyyy-mm-dd</p><br/><p>Scenario 2 - a repeat prescription request with an authoredOn of the date in Scenario 1 +1 day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned  prescription requests created for Scenario 1 and Scenario 2</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a authoredOn date of eq yyyy-mm-dd (Scenario 1) plus 2 days together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Scenario 1 - a repeat prescription request with an authoredOn date of yyyy-mm-dd + 2 days</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that no Task resources are returned </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test that the correct number of prescription re-orders are returned when the user specifies eq, ge, or le dates in the authoredOn parameter<br/>
+<br/>
+*Test Data*<br/>
+<br/>
+Scenario 1 - a repeat prescription request with an authoredOn date of yyyy-mm-dd<br/>
+<br/>
+Scenario 2 - a repeat prescription request with an authoredOn of the date in Scenario 1 +1 day<br/>
+<br/>
+Scenario 3 - a repeat prescription request with an authoredOn of the date Scenario of -1 day<br/>
+<br/>
+ 
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1132500" rel="1132500" data-issuekey="DCA-95" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-95" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-95">DCA-95</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders - note element
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a Task Id of a repeat prescription whereby notes were added by the patient at the time of completing the request</p></td>
+                        <td style="max-height: 25px;"><p>A prescription request with notes that were added by the patient at the time of completing the request</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Task resource is returned <br/>
+And that the note element is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that any notes entered by the patient when completing the request are preserved and returned by the Provider within the notes element of the Task resource<br/>
+<br/>
+*Test Data*<br/>
+ * A prescription request with notes that were added by the patient at the time of completing the request
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1132085" rel="1132085" data-issuekey="DCA-93" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-93" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-93">DCA-93</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders - output element - EPS Prescription ID
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the user enters the Task Id of the prescription request<br/>
+And the user entere a status of completed</p></td>
+                        <td style="max-height: 25px;"><p>A 'completed' repeat prescription request that has been sent to EPS </p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Task resource is returned <br/>
+And that the output element is returned<br/>
+And the system URL will be be 'https://fhir.hl7.org.uk/GPConnect-PrescriptionOrderingParameters'<br/>
+And the code will be 'sent-to-eps'<br/>
+And the display will be 'Sent to EPS'<br/>
+And the value identifier syste value will be 'https://fhir.nhs.uk/Id/prescription-order-item-number'<br/>
+And the value will be populated with the order number</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby a completed prescription has been sent to EPS and the output element in th Task resource is populated as per the specification.<br/>
+<br/>
+*Test Data*<br/>
+ * A &#39;completed&#39; repeat prescription request that has been sent to EPS 
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1132026" rel="1132026" data-issuekey="DCA-92" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-92" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-92">DCA-92</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders - input element - change to nominated pharmacy
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a Task Id of a repeat prescription whereby the patient has requsted a change to the nominated pharmacy</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Task resource is returned <br/>
+And that the input element is returned<br/>
+And the system equals 'https://fhir.hl7.org.uk/GPConnect-PrescriptionOrderingParameters'<br/>
+And the code and display elements equal 'preferred-performer'<br/>
+And the valueIdentifier system equals 'https://fhir.nhs.uk/Id/ods-organization-code<br/>
+And the value is populated with the ODS code of the preferred dispensing pharmacy</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a Task Id of a repeat prescription  whereby the nominated dispenser has not been amended</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Task resource is returned <br/>
+And that the input element is not returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby for a prescripton request the patient has decided that they would like the request to be dispensed by a different pharmacy to their nominated pharmacy on PDS<br/>
+<br/>
+*Test Data*<br/>
+ * Repeat prescription request that has been completed and where the nominated pharmacy is not the patients nominated pharmacy on PDS<br/>
+ * Repeat prescription that has been completed where no change to the patients nominated pharmacy on PDS has taken place 
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1131674" rel="1131674" data-issuekey="DCA-90" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-90" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-90">DCA-90</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders - status element
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of requested together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'requested'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned <br/>
+And that the status element equals requested<br/>
+And confirm that no other Task resources with a status of anything other than Requested are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of accepted together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'accepted'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned<br/>
+And that the status element equals accepted<br/>
+And confirm that no other Task resources with a status of anything other than accepted are returned</p>
+</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of rejected together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Repeat prescription request with a status of 'rejected'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned<br/>
+And that the status element equals rejected <br/>
+And that the statusReason element is populated with the rejection reason<br/>
+And confirm that no other Task resources with a status of anything other than rejected are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of cancelled together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Repeat prescription request with a status of 'cancelled'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned<br/>
+And that the status element equals cancelled<br/>
+And confirm that no other Task resources with a status of anything other than cancelled are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of in-progress together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Current repeat prescription request with a status of 'in-progress'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned<br/>
+And that the status element equals in-progress<br/>
+And confirm that no other Task resources with a status of anything other than in-progress are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">6</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of completed together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Repeat prescription request with a status of 'completed'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned<br/>
+And that the status element equals completed<br/>
+And confirm that no other Task resources with a status of anything other than completed are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">7</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a Get requested prescription reorders is requested<br/>
+And the patient enters a status of failed together with the mandatory Patient NHS number</p></td>
+                        <td style="max-height: 25px;"><p>Repeat prescription request with a status of 'failed'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task resource is returned<br/>
+And that the status element equals failed<br/>
+And that the statusReason element is populated with the failed reason<br/>
+And confirm that no other Task resources with a status of anything other than failed are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Tests to ensure that the correct status code is returned within the Task resource for past and current prescription requests.<br/>
+<br/>
+*Test Data*<br/>
+ * Current repeat prescription request with a status of &#39;requested&#39;<br/>
+ * Current repeat prescription request with a status of &#39;accepted&#39;<br/>
+ * Repeat prescription request with a status of &#39;rejected&#39;<br/>
+ * Repeat prescription request with a status of &#39;cancelled&#39;<br/>
+ * Current repeat prescription request with a status of &#39;in-progress&#39;<br/>
+ * Repeat prescription request with a status of &#39;completed&#39;<br/>
+ * Repeat prescription request with a status of &#39;failed&#39;
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1130153" rel="1130153" data-issuekey="DCA-83" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-83" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-83">DCA-83</a>
+</td>
+                                            <td class="summary"><p>
+                Get requested prescription reorders -include parameter Task:focus:MedicationRequest
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get requested prescription reorders is requested <br/>
+And the include Task Focus Medication Request is selected</p></td>
+                        <td style="max-height: 25px;"><p>Prescription request with a status of requested</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Task focus element reference includes a Medication Request reference<br/>
+And verify that this Medication Request resource is returned within the returned bundle<br/>
+And confirm that the intent element of the Medication Request resource equals Plan</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that if the user adds the include parameter Task:focus:MedicationRequest then the referenced Medication Request that is referenced within the focus element of the Task resource is returned as expected and that the intent element of the Medication Request resource equals Plan<br/>
+<br/>
+*Test Data*<br/>
+ * Prescription request with a status of requested
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1128335" rel="1128335" data-issuekey="DCA-79" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-79" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-79">DCA-79</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - multiple parameter testing
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding an intent of Plan<br/>
+And adding a valid EPS Prescription Identifier</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that was issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that an empty bundle is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding the date eq date that the prescription was requested in the authoredOn parameter<br/>
+And adding an intent of Order<br/>
+And adding a valid EPS Prescription Identifier</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that was issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request resource with an intent of order is returned<br/>
+And that the EPS Identifier is returned in the groupIdentifier element</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding the date eq date that the prescription was requested in the authoredOn parameter<br/>
+And adding an intent of Order<br/>
+And adding a valid EPS Prescription Identifier<br/>
+And adding an status of active </p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that was issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that an empty bundle is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding the date eq date that the prescription was requested in the authoredOn parameter<br/>
+And adding an intent of Order<br/>
+And adding a valid EPS Prescription Identifier<br/>
+And adding an status of completed</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that was issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request resource with an intent of order is returned<br/>
+And that the EPS Identifier is returned in the groupIdentifier element<br/>
+And the status element equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding the date le date to the day before that the prescription was requested in the authoredOn parameter<br/>
+And adding an intent of Order<br/>
+And adding a valid EPS Prescription Identifier<br/>
+And adding an status of completed</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that was issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that an empty bundle is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">6</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding the date ge date to the day after that the prescription was requested in the authoredOn parameter<br/>
+And adding an intent of Order<br/>
+And adding a valid EPS Prescription Identifier<br/>
+And adding an status of completed</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that was issued via EPS</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that an empty bundle is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">7</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding an intent of Order<br/>
+And adding an status of active</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication where all three orders have been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that an empty bundle is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">8</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested using the Patient Id<br/>
+And adding an intent of Order<br/>
+And adding an status of completed</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication where all three orders have been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that three Medication Request resource with an intent of order are returned<br/>
+And verify that the Medication Resource with an intent of plan is not returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">9</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Testing using multiple parameters<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that was issued via EPS<br/>
+ * A repeat medication where all three orders have been issued
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125785" rel="1125785" data-issuekey="DCA-62" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-62" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-62">DCA-62</a>
+</td>
+                                            <td class="summary"><p>
+                Get a specific planned medication request - searching stopped medications
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the acute medication that has been issued and subsequently discontinued</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has been issued then subsequently discontinued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals stopped</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the repeat dispense medication that has been discontinued</p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense medication that has been discontinued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals stopped</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test that when the user searches using a Medication Request reference with an intent of Plan for a stopped medication as retrieved from the Get medications relating to a patient call, that the Medication Request resource is returned successfully.<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that has been issued then subsequently discontinued<br/>
+ * A repeat dispense medication that has been discontinued
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125772" rel="1125772" data-issuekey="DCA-61" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-61" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-61">DCA-61</a>
+</td>
+                                            <td class="summary"><p>
+                Get a specific planned medication request - searching completed medications
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the acute medication that has not been issued</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has been issued.</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the repeat medication that has had all of the authorised issues issued</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication whereby all 4 out of the 4 authorised issues have been issued.</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the repeat dispense medication</p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense medication of 3 issues.</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      o test that when the user searches using a Mediation Request reference with an intent of Plan for a cancelled medication as retrieved from the Get medications relating to a patient call that the Medication Request resource is returned successfully.<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that has been issued.<br/>
+ * A repeat medication whereby all 4 out of the 4 authorised issues have been issued.<br/>
+ * A repeat dispense medication of 3 issues.
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125724" rel="1125724" data-issuekey="DCA-60" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-60" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-60">DCA-60</a>
+</td>
+                                            <td class="summary"><p>
+                Get a specific planned medication request - searching active medications
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the acute medication that has not yet been issued</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has not yet been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals active<br/>
+And that the courseOfTherapyType equals acute</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the repeat medication that has had 2 out of the 4 authorised issues issued</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication whereby 2 out of the 4 authorised issues have been issued.</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals active<br/>
+And that the courseOfTherapyType equals continuous</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the repeat medication that was prescribed elsewhere</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication prescribed elsewhere</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals active<br/>
+And that the courseOfTherapyType equals continuous</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get a specific planned medication request is made<br/>
+And the user includes the Medication Request Plan id of the acute OTC medication</p></td>
+                        <td style="max-height: 25px;"><p>An OTC medication</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned<br/>
+And confirm that the status element equals active<br/>
+And that the courseOfTherapyType equals acute</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test that when the user searches using a Medication Request reference with an intent of Plan for an active medication as retrieved from the Get medications relating to a patient call that the Mecication Request resource is returned successfully.<br/>
+<br/>
+Also to verify the correct population of the courseOfTherapyType element.<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that has not yet been issued<br/>
+ * A repeat medication whereby 2 out of the 4 authorised issues have been issued.<br/>
+ * A repeat medication prescribed elsewhere<br/>
+ * An OTC medication
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1121544" rel="1121544" data-issuekey="DCA-37" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-37" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-37">DCA-37</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - status
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an acute medication that not yet been issued</p></td>
+                        <td style="max-height: 25px;"><p>An acute medication that has not yet been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement status element equals  active</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an acute medication that been issued</p></td>
+                        <td style="max-height: 25px;"><p>An acute medication that has been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement status element equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is a repeat medication that been outstanding issues</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication that has outstanding issues</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement status element equals active</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is a repeat dispense medication that been cancelled</p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense medication that has been cancelled</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement status element equals stopped</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is a repeat medication where all the issues have been completed</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication where all the issues have been completed </p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement status element equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Tests to ensure that the Medication Statement status element is returned based on a set of medication in various states.<br/>
+<br/>
+*Test Data*<br/>
+ * An acute medication that has not yet been issued<br/>
+ * An acute medication that has been issued<br/>
+ * A repeat medication that has outstanding issues<br/>
+ * A repeat dispense medication that has been cancelled<br/>
+ * A repeat medication where all the issues have been completed 
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1121045" rel="1121045" data-issuekey="DCA-36" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-36" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-36">DCA-36</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - dateAsserted
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an acute medication that has been issued</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has been completed, i.e. it has been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement dateAsserted date returned equals the audit trail date/time for when the authorisation was entered.</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that the dateAsserted always equals the time that the authorisation was entered in the Provider system<br/>
+<br/>
+*Test Data*<br/>
+<br/>
+Acute medication that has been completed, i.e. it has been issued
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1119894" rel="1119894" data-issuekey="DCA-35" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-35" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-35">DCA-35</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - Dosage
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"><p>Then verify that as  bare minumum that the sosage.text is retunred in the Medication Statement dosage element<br/>
+And that if structured dosage content is returned that the content conforms to the expected FHIR R4 output</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ascertain what dosage infromatio that the Provider will return in the dosage element.<br/>
+<br/>
+Ideally this should be in a structured format but as a bare minimum the dosage.text must be returned but if additional structured dosge information is returned by the Provider then this should also be structurally correct.
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1118790" rel="1118790" data-issuekey="DCA-34" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-34" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-34">DCA-34</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - effectivePeriod
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an acute medication that is still active</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that is still active, i.e. it has been authorised but not issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the acute medication is authorised<br/>
+And that the effectivePeriod.end is not returned i.e. is null</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an acute medication that has been issued</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has been completed, i.e. it has been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the acute medication is authorised<br/>
+And that the effectivePeriod.end is returned i.e. is populated with the period of the prescription issue</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an repeat medication that is still active</p>
+</td>
+                        <td style="max-height: 25px;"><p>Repeat medication that is still active, i.e. there are outstanding issues</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the repeat medication is authorised<br/>
+And that the effectivePeriod.end is not returned i.e. is null</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an repeat medication that has been completed, i.e. all issues have run their course</p></td>
+                        <td style="max-height: 25px;"><p>Repeat medication that has been completed, i.e. all issues have run their course</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the repeat medication is authorised<br/>
+And that the effectivePeriod.end is populated (ideally with the end date of the final issue)</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an repeat dispense medication that is still active</p></td>
+                        <td style="max-height: 25px;"><p>Repeat dispense medication that is still active, i.e. there are outstanding issues</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the repeat medication is authorised<br/>
+And that the effectivePeriod.end is not returned i.e. is null</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">6</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is an repeat dispense medication that has been completed, i.e. all issues have run their course</p></td>
+                        <td style="max-height: 25px;"><p>Repeat dispense medication that has been completed, i.e. all issues have run their course</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the repeat medication is authorised<br/>
+And that the effectivePeriod.end is populated (ideally with the end date of the final issue)</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">7</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is a repeat prescribed elsewhere medication </p></td>
+                        <td style="max-height: 25px;"><p>A Prescribed elsewhere repeat medication</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the prescribed elsewhere medication was entered<br/>
+And that the effectivePeriod.end is not returned i.e. is null</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">8</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And there is a OTC medication</p></td>
+                        <td style="max-height: 25px;"><p>An OTC medication</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the effectivePeriod.start is populated with the start date from which the OTC medication was entered<br/>
+And that the effectivePeriod.end is not returned i.e. is null</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test scenarios around the population of the Medication Statement effectivePeriod.<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that is still active, i.e. it has been authorised but not issued<br/>
+ * Acute medication that has been completed, i.e. it has been issued<br/>
+ * Repeat medication that is still active, i.e. there are outstanding issues<br/>
+ * Repeat medication that has been completed, i.e. all issues have run their course<br/>
+ * Repeat dispense medication that is still active, i.e. there are outstanding issues<br/>
+ * Repeat dispense medication that has been completed, i.e. all issues have run their course<br/>
+ * A Prescribed elsewhere repeat medication<br/>
+ * An OTC medication
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1118739" rel="1118739" data-issuekey="DCA-33" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-33" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-33">DCA-33</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - extraction of all medication - greater than or equal to and less than or equal to effective date
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And the effective 'g' date parameter is also included</p></td>
+                        <td style="max-height: 25px;"><p>An acute Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the 'g' date parameter entered</p><br/><p>A repeat Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that is one day less than the 'g' date parameter entered</p>
+</td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement for the acute medication is returned for with the authoredOn date that is equal to the 'g' date parameter<br/>
+And that the basedOn element is returned with reference to the acute medication authorised<br/>
+And the Medication Statement resource is not returned the repeat medication with an authoredOn date one day less than the g date parameter entered</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And the effective 'le' date parameter is also included</p></td>
+                        <td style="max-height: 25px;"><p>An repeat dispense Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the 'le' date parameter entered</p><br/><p>A repeat Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that is one day more than the 'le' date parameter entered</p>
+</td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement for the repeat dispense medication is returned for with the authoredOn date that is equal to the 'le' date parameter<br/>
+And that the basedOn element is returned with reference to the repeat dispense medication authorised<br/>
+And the Medication Statement resource is not returned the repeat medication with an authoredOn date one day more than the le date parameter entered</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Scenarios to test the effective date parameter inclusion of either &#39;g&#39; (greater than or equal to) or le (less than or equal to)<br/>
+<br/>
+*Test Data*<br/>
+ * An acute Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the &#39;g&#39; date parameter entered<br/>
+ * A repeat Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that is one day less than the &#39;g&#39; date parameter entered<br/>
+ * An repeat dispense Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the &#39;le&#39; date parameter entered<br/>
+ * A repeat Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that is one day more than the &#39;le&#39; date parameter entered<br/>
+<br/>
+ 
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1118396" rel="1118396" data-issuekey="DCA-32" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-32" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-32">DCA-32</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - check all medications are returned
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested</p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense medication with 4 issues which has run its course - MedicationStatement.status should equal 'complete'</p><br/><p>A repeat medication with 4 issues, 2 of which have been issued but then the authorisation has been stopped - MedicationStatement.status should equal 'stopped'</p><br/><p>A repeat dispense medication of 7 issues which has subsequently been discontinued - MedicationStatement.status should be 'discontinued'</p><br/><p>A repeat medication with 6 issues, 5 of which have been issued - MedicationStatement.status should equal 'active'</p><br/><p>An acute medication that has been authorised but not issued - MedicationStatement.status should equal 'active'</p><br/><p>An acute medication that has been issued - MedicationStatement.status should equal 'complete'</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement for the Medications listed in the test data are returned<br/>
+And the MedicationStatement.status element is populated as expected.</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that all medication statements are returned, ensuring that authorisations that have MedicationStatement.status of either &#39;active&#39; complete&#39; or &#39;stopped&#39; are returned to the consumer when requested<br/>
+<br/>
+Test Data<br/>
+<br/>
+A repeat dispense medication with 4 issues which has run its course - MedicationStatement.status should equal &#39;complete&#39;<br/>
+<br/>
+A repeat medication with 4 issues, 2 of which have been issued but then the authorisation has been stopped - MedicationStatement.status should equal &#39;stopped&#39;<br/>
+<br/>
+A repeat dispense medication of 7 issues which has subsequently been discontinued - MedicationStatement.status should be &#39;discontinued&#39;<br/>
+<br/>
+A repeat medication with 6 issues, 5 of which have been issued - MedicationStatement.status should equal &#39;active&#39;<br/>
+<br/>
+An acute medication that has been authorised but not issued - MedicationStatement.status should equal &#39;active&#39;<br/>
+<br/>
+An acute medication that has been issued - MedicationStatement.status should equal &#39;complete&#39;<br/>
+<br/>
+ 
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1117791" rel="1117791" data-issuekey="DCA-31" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-31" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-31">DCA-31</a>
+</td>
+                                            <td class="summary"><p>
+                Get medications relating to a patient - extraction of all medication - exact date
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient is requested<br/>
+And the effective 'eq' date parameter is also included</p></td>
+                        <td style="max-height: 25px;"><p>An acute Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the 'eq' date parameter entered</p><br/><p>An acute Medication with an authoredOn date that is equal to the 'eq' date +1</p><br/><p>An acute Medication with an authoredOn date that is equal to the 'eq' date -1</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement for the acute medication is returned for with the authoredOn date that is equal to the 'eq' date parameter<br/>
+And that the basedOn element is returned with reference to the acute medication authorised<br/>
+And the Medication Statement resources are not returned for the eq date +1 and -1 acute medications </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient<br/>
+And the effective 'eq' date parameter is also included</p></td>
+                        <td style="max-height: 25px;"><p>A repeat Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the 'eq' date parameter entered</p><br/><p>A repeat Medication with an authoredOn date that is equal to the 'eq' date +1</p><br/><p>An repeat Medication with an authoredOn date that is equal to the 'eq' date -1</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement for the repeat medication is returned for the authoredOn date that is equal to the 'eq' date parameter<br/>
+And that the basedOn element is returned with reference to the repeat medication authorised<br/>
+And the Medication Statement resources are not returned for the eq date +1 and -1 repeat medications </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get medications relating to a patient<br/>
+And the effective 'eq' date parameter is also included</p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense Medication with an authoredOn, authorisation date (identifiable via the Medication Requested plan authoredOn element) that equals the 'eq' date parameter entered</p><br/>
+<p>A repeat dispense Medication with an authoredOn date that is equal to the 'eq' date +1</p><br/>
+<p>A repeat dispense Medication with an authoredOn date that is equal to the 'eq' date -1</p>
+</td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Statement for the repeat dispense medication is returned for the authoredOn date that is equal to the 'eq' date parameter<br/>
+And that the basedOn element is returned with reference to the repeat medication authorised<br/>
+And the Medication Statement resources are not returned for the eq date +1 and -1 repeat dispense medications </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby the Consumer queries using the eq exact date parameter.<br/>
+<br/>
+Acute, repeat and repeat dispense medication authorised to return on exact date queried.<br/>
+<br/>
+Acute repeat and repeat dispense medications authorised for exact date +1 and exact date -1.
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1127264" rel="1127264" data-issuekey="DCA-77" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-77" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-77">DCA-77</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - optional search status - stopped
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of completed</p></td>
+                        <td style="max-height: 25px;"><p>Issued acute medication that has been discontinued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan and order are returned for the acute medication<br/>
+And confirm that the status equals stopped for both</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of completed</p></td>
+                        <td style="max-height: 25px;"><p>Repeat medication that was authorised for 4 issues and issued for 2. The prescription is subsequently discontinued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan only returned for the repeat medication<br/>
+And confirm that the status equals stopped</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of completed</p></td>
+                        <td style="max-height: 25px;"><p>Repeat dispense medication which was authorised and dispenses for 3 issues</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan only returned for the repeat dispense medication<br/>
+And confirm that the status equals stopped</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that the correct Medication Requests are returned when the user searches using an optional status of stopped. <br/>
+<br/>
+*Test Data*<br/>
+ * Issued acute medication that has been discontinued (Medication Request with an intent of plan and order, both with a status of stopped)<br/>
+ * Repeat medication that was authorised for 4 issues and issued for 2. The prescription is subsequently discontinued (only one Medication Request with an intent of Plan with a status of stopped)<br/>
+ * Repeat dispense medication which was authorised and dispenses for 3 issues. The prescription is subsequently discontinued (resulting in One Medication Request intent of Plan with a status of stopped and three Medication Requests with an intent of order with a status of completed)
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1126967" rel="1126967" data-issuekey="DCA-64" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-64" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-64">DCA-64</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - optional search status - completed
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of completed</p></td>
+                        <td style="max-height: 25px;"><p>An acute medication that has been authorised and issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned for the authorised and issued acute medication<br/>
+And a Mediation Request with an intent of order is returned for the issued acute medication<br/>
+And verify that for both Medication Requests the status equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of completed</p></td>
+                        <td style="max-height: 25px;"><p>A repeat medication that has been authorised for 4 issues but has only been issued 2 times</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of order is returned for the two issued issues of the repeat medication<br/>
+And verify that the status for both medication Requests equals completed<br/>
+And verify that no Medication Request of Plan is returned for the repeat medication</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the consumer includes the  optional search status of completed</p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense medication that has been issued 3 times</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request with an intent of plan is returned for repeat dispense<br/>
+And confirm that the status equals completed<br/>
+And verify that three separate Medication Requests with an intent of order are also returned for the repeat dispense medication<br/>
+And confirm that the status equals completed</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to ensure that the correct Medication Requests are returned when the user searches using an optional status of completed.<br/>
+<br/>
+*Test Data*<br/>
+ * An acute medication that has been authorised and issued<br/>
+ * A repeat medication that has been authorised for 4 issues but has only been issued 2 times<br/>
+ * A repeat dispense medication that has been issued 3 times
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125660" rel="1125660" data-issuekey="DCA-59" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-59" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-59">DCA-59</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - intent of Order
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the user enters 'Order' in the optional Intent search parameter</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has been issued.</p><br/><p>Repeat medication whereby 2 put of the 4 authorised issues have been issued.</p><br/><p>Repeat dispense medication, all 3 of the authorised issues have been issued</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Order that relates to the acute medication<br/>
+And that the two Medication Requests with an intent of Order are returned for the repeat medication<br/>
+And that the three Medication Requests with an intent of Order are returned for the repeat dispense medication<br/>
+And no Medication Requests with an intent of plan are returned<br/>
+And confirm that for all Mediation Requests with an intent of Order that thebasedOn element is populated with the Meeication Request plan reference</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to endure that if the user submits an intent of Order in the intent parameter then only Medication Requests with an intent of Order are returned an confirm that the basedOn element is populated with the Medication Request reference<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that has been issued<br/>
+ * Repeat medication whereby 2 put of the 4 authorised issues have been issued.<br/>
+ * Repeat dispense medication, all 3 of the authorised issues have been issued
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125631" rel="1125631" data-issuekey="DCA-58" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-58" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-58">DCA-58</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - intent of Plan
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the user enters 'Plan' in the optional Intent search parameter</p></td>
+                        <td style="max-height: 25px;"><p>Acute medication that has been issued</p><br/><p>Repeat medication whereby 2 put of the 4 authorised issues have been issued.</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the acute an repeat medication<br/>
+And no Medication Requests with an intent of order are returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to endure that if the user submits an intent of Plan in the intent parameter then only Medication Requests with an intent of Plan are returned.<br/>
+<br/>
+*Test Data*<br/>
+ * Acute medication that has been issued<br/>
+ * Repeat medication whereby 2 put of the 4 authorised issues have been issued.
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125103" rel="1125103" data-issuekey="DCA-56" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-56" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-56">DCA-56</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - submitted authoredOn date is in the future
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue request<br/>
+And the authoredOn date is in the future</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"><p>Then the provider will return an Operation Outcome <br/>
+And the HTTP status code will be 400<br/>
+And the Spine error code will be 'INVALID_PARAMETER'</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby the submitted authoredOn date is in the future parameter is supplied.<br/>
+<br/>
+An Operation Outcome should be returned with a HTTP status code of 400 and a Spine error code of INVALID_PARAMETER
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1125088" rel="1125088" data-issuekey="DCA-55" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-55" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-55">DCA-55</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - authoredOn less than or equals to date
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter le is included<br/>
+And is equal to the date that the repeat medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat that was authorised and the first issue was issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the repeat medication<br/>
+And a Medication Request is returned with an intent of order for the first issue of the medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue detailsrequest is made<br/>
+And the authoredOn date parameter le is included<br/>
+And is greater the date that the repeat medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat that was authorised but the first issue was not issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the medication Request with the intent of plan or order is not returned for the repeat medication</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system<br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter le is included<br/>
+And is less than the date that the acute medication was authorised</p></td>
+                        <td style="max-height: 25px;"><p>An acute that was authorised and issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the acute medication<br/>
+And a Medication Request is returned with an intent of order for the issue of the acute medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference  </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter le is included<br/>
+And is greater than the date that the repeat dispense medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense that has been dispensed three times</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the Medication Request with the intent of plan or the three Medication Request of order is not returned for the repeat dispense medication</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby the user requests prescription issues using the optional authoredOn less than or equals to (le) parameter.<br/>
+<br/>
+*Test Data*<br/>
+ * A repeat that was authorised and the first issue was issued on the same day<br/>
+ * A repeat that was authorised but the first issue was not issued on the same day<br/>
+ * An acute that was authorised and issued on the same day<br/>
+ * A repeat dispense that has been dispensed three times
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1124798" rel="1124798" data-issuekey="DCA-54" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-54" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-54">DCA-54</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - authoredOn greater than or equals to date
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter ge is included<br/>
+And is greater than the date that the repeat medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat that was authorised and the first issue was issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the medication Request with the intent of plan or order is not returned for the repeat medication</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter ge is included<br/>
+And is equal to the date that the repeat medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat that was authorised and the first issue was issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the repeat medication<br/>
+And a Medication Request is returned with an intent of order for the first issue of the medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference  </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter ge is included<br/>
+And equals the date that the acute medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>An acute that was authorised and issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the acute medication<br/>
+And a Medication Request is returned with an intent of order for the issue of the acute medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference  </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter ge is included<br/>
+And is greater than the date that the repeat dispense medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense that has been dispensed three times</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the medication Request with the intent of plan or any of the orders are not returned that relate to the repeat dispense medication</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby the user requests prescription issues using the optional authoredOn greater than or equals to (ge) parameter.<br/>
+<br/>
+*Test Data*<br/>
+ * A repeat that was authorised and the first issue was issued on the same day<br/>
+ * A repeat that was authorised but the first issue was not issued on the same day<br/>
+ * An acute that was authorised and issued on the same day<br/>
+ * A repeat dispense that has been dispensed three times
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1124762" rel="1124762" data-issuekey="DCA-53" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-53" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-53">DCA-53</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - authoredOn equals to date
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter eq is included<br/>
+And equals the date that the repeat medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat that was authorised and the first issue was issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the repeat medication<br/>
+And a Medication Request is returned with an intent of order for the first issue of the medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference  </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue detailsrequest is made<br/>
+And the authoredOn date parameter eq is included<br/>
+And equals the date that the repeat medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat that was authorised but the first issue was not issued on the same day as the authorisation</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the date authorisation of the repeat medication<br/>
+And confirm that there is not a Medication Request with an intent of order returned that relates to the intent of plan</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">3</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter eq is included<br/>
+And equals the date that the acute medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>An acute that was authorised and issued on the same day</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the acute medication<br/>
+And a Medication Request is returned with an intent of order for the issue of the acute medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference  </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">4</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter eq is included<br/>
+And equals the date that the repeat dispense medication was authorised </p></td>
+                        <td style="max-height: 25px;"><p>A repeat dispense that has been dispensed three times</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that a Medication Request is returned with an intent of Plan that relates to the authorisation of the repeat  dispense medication<br/>
+And three Medication Requests are returned with an intent of order for the three issues of the medication<br/>
+And the basedOn element is populated with the Medication Request intent of plan reference in all of the Medication Requests of order  </p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">5</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a Get prescription issue details request is made<br/>
+And the authoredOn date parameter eq is included<br/>
+And does not equal the authored in date of any medication</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"><p>Then verify that an empty bundle is returned</p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      To test the scenario whereby the user requests prescription issues using the optional authoredOn exact date (eq) parameter.<br/>
+<br/>
+*Test Data*<br/>
+ * A repeat that was authorised and the first issue was issued on the same day<br/>
+ * A repeat that was authorised but the first issue was not issued on the same day<br/>
+ * An acute that was authorised and issued on the same day<br/>
+ * A repeat dispense that has been dispensed three times
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow1123264" rel="1123264" data-issuekey="DCA-38" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DCA-38" href="https://nhsd-jira.digital.nhs.uk/browse/DCA-38">DCA-38</a>
+</td>
+                                            <td class="summary"><p>
+                Get prescription issue details - check to confirm EPS ID&#39;s are not returned on Medication request plans
+    </p>
+</td>
+                                            <td class="customfield_10919">        <div>
+        <table id="project-config-steps-table" class="aui" style="width: 100%">
+            <thead>
+            <tr>
+                <th style="max-height: 25px;"></th>
+                <th style="max-height: 25px;">Test Step</th>
+                <th style="max-height: 25px;">Test Data</th>
+                <th style="max-height: 25px;">Expected Result</th>
+                <th style="max-height: 25px;">Attachment Details</th>
+                <th style="max-height: 25px;">Test Step Custom Fields</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">1</td>
+                        <td style="max-height: 25px;"><p>Given that l am a Provider system <br/>
+When a PFS Get prescription issue details is requested with NHS number only<br/>
+And there is an repeat medication that has been issued via EPS twice out of four authorisations</p></td>
+                        <td style="max-height: 25px;"><p>A repeat prescription issued via EPS that has been issued 2 out of the 4 authorisations</p></td>
+                        <td style="max-height: 25px;"><p>Then verify that the returned Medication Request intent of Plan does not contain the EPS Identifier<br/>
+And verify that the two Medication Requests with an intent of Order do contain the EPS Identifier<br/>
+And the Identifier system is <a href="https://fhir.nhs.uk/Id/prescription-order-item-number" class="external-link" target="_blank" rel="nofollow noopener">https://fhir.nhs.uk/Id/prescription-order-item-number</a></p></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                
+                    
+                    
+                    <tr style="word-wrap: break-word;">
+                        <td style="max-height: 25px;">2</td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                        <td style="max-height: 25px;"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+    </td>
+                                            <td class="description">      Test to confirm that the EPS Identifier is not returned in Medication Requests with an intent of Plan, they should ony be returned in Medication Requests with an intent of Order and that the EPS Identifier system equals https://fhir.nhs.uk/Id/prescription-order-item-number.<br/>
+<br/>
+*Test Data*<br/>
+ * A repeat prescription issued via EPS that has been issued 2 out of the 4 authorisations
+  </td>
+                    </tr>
+                </tbody>
+    </table>
+    </issuetable-web-component>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#f5f5f5" colspan="4"><font size="1">
+        Generated at Wed Oct 04 15:41:35 BST 2023 by Alex Bazin using Jira 9.4.4#940004-sha1:26f64053da9e8780329c4d14d752a94327e2e61d.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>
